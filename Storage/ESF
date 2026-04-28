@@ -1,0 +1,36 @@
+create vpc-1 with 4 subnest each need 10 ips
+sn1,sn2 public
+sn3,sn4 private
+
+sn1,sn3 -> AZ-A
+sn2,sn4 -> AZ-B
+
+sn1 - jump server
+sn2 - nat gateway
+sn3 - ubuntu app-1    - install apache2 ,mount efs-F2
+sn4 - aws linux app-2 - install httpd  , mount efs-F1
+
+create EFS in vpc-1
+create F1, F2,F3,F4 in each folder create index.html with diferent WC message
+
+efs mount using nfs
+
+create LB and access private subnets outside
+
+---
+create vpc-2 with 4 subnest each need 10 ips
+sn1,sn2 public
+sn3,sn4 private
+
+sn1,sn3 -> AZ-A
+sn2,sn4 -> AZ-B
+
+sn1 - jump server
+sn2 - nat gateway
+sn3 - ubuntu app-1    - install apache2, mount efs-F3
+sn4 - aws linux app-2 - install httpd ,  mount efs-F4
+
+use peering connect b/w vpc-1 and vpc-2
+use efs mount  via ip
+
+create LB and access private subnets outside
