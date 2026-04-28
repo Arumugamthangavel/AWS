@@ -1,0 +1,51 @@
+AWS storage
+
+EBS -> harddisk for ec2 (hdd,ssd)
+EFS -> like NAS ,but support only Linux works with in a vpc andon-prem
+S3  -> like external harddisk , can access via ,web,sdk,cli,api
+FSX -> like NAS, support windows and linux vpc and on-prem(need to create directory service)
+
+EBS -> volume Types
+
+General Purpose 
+Provisioned IOPS
+Throughput Optimized
+Cold 
+Magnetic
+
+
+General Purpose 
+gp3                 1 GiB - 64 TiB	Min: 3000 IOPS, Max: 80000 IOPS.
+gp2                 1 GiB - 16 TiB  Min: 100 IOPS, Max: 16000
+
+Provisioned IOPS
+io2 Block Express	4 GiB - 64 TiB	Min: 100 IOPS, Max: 256000 
+io1                 4 GiB - 16 TiB  Min: 100 IOPS, Max: 64000 
+
+Throughput Optimized
+st1                 125 GiB - 16 TiB    Baseline: 40 MiB/s per TiB.
+
+Cold 
+sc1                 125 GiB - 16 TiB    Baseline: 12 MiB/s per TiB.
+
+Magnetic
+standard            1 GiB - 1 TiB
+
+
+
+8 bit = 1 byte
+1024 byte = 1 kib
+1000 byte = 1 kb
+
+EBS support windows OS and linux OS
+EBS works in AZ wise
+create snapshot of the required EBS volume to transfer the data to different AZ/region/account to create a volume
+charges per GB based on volume size what we created and volume class what we choosed 
+volume size can be sacle-in and scale-out as required
+root volume allows to scale-out the volume size it wont allow to scale-in
+
+
+df -h
+mkfs types
+mkfs ext4    /dev/svdf
+mount folder /dev/svdf
