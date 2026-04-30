@@ -1,0 +1,43 @@
+Load balancer
+
+single contact point
+
+for High availability
+
+to create LB - required Min - 2AZ
+
+classic     = V1-LB min 2 AZ, http,https,tcp,ssl
+
+applicaion  = V2-LB min 2 AZ http,https   Layer 7
+
+network     = V2-LB min 1 AZ tcp,udp,tsl  Layer 4 
+
+gateway     = work with third pary application ,on-prem support
+
+AWS Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets—such as EC2 instances, containers, and IP addresses—across multiple Availability Zones. 
+
+It increases application fault tolerance, provides high availability, and automatically scales to handle traffic changes. 
+
+ELB serves as a single point of contact for clients, monitoring target health and routing traffic only to healthy instances. 
+
+Application Load Balancer (ALB): Best for HTTP/HTTPS traffic, operating at Layer 7 to route requests based on content (path-based, host-based routing).
+
+Network Load Balancer (NLB): Ideal for high-performance TCP/UDP traffic, operating at Layer 4 and capable of handling millions of requests per second with low latency.
+
+Gateway Load Balancer (GWLB): Used to deploy and manage third-party virtual appliances (firewalls, inspection tools).
+
+Classic Load Balancer (CLB): Legacy load balancer for basic EC2-Classic
+
+High Availability: Distributes traffic across multiple Availability Zones (AZs) to ensure uninterrupted service if one instance or AZ fails.
+
+Health Checks: Continuously monitors backend targets and stops sending traffic to unhealthy ones.
+
+Security: Supports SSL/TLS termination, allowing you to manage certificates via AWS Certificate Manager (ACM).
+
+Scalability: Automatically adjusts capacity based on traffic fluctuations without manual intervention.
+
+Integration: Integrates with Amazon ECS for container balancing, Auto Scaling, and AWS WAF for security. 
+
+Internal-LB       # access inside the N/W
+
+Intenetfacing-LB  # access from outside the N/W
