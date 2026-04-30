@@ -1,0 +1,91 @@
+M1
+
+create folder - Demo01
+
+1 clear
+
+2 mkdir demo-01
+
+3 lsblk
+
+4 df -h
+
+5 df --help
+
+6 clear
+
+7 lsblk
+
+8 df -h
+
+9 mkfs --help
+
+10 sudo mkfs.ext4 /dev/nvme1n1
+
+11 sudo mount /dev/nvme1n1 demo-01/
+
+12 df -h
+
+13 lsblk
+
+14 cd demo-01/
+
+15 sudo history > 1a
+
+16 cd
+
+17 history > 1a
+
+18 ls
+
+19 sudo mv 1a demo-01/
+
+20 ls
+
+21 cd demo-01/
+
+
+
+M02
+
+
+
+2 mkdir demo-02
+
+3 lsblk
+
+4 sudo mount /dev/nvme1n1 demo-02/
+
+5 cd demo-02/
+
+6 ls
+
+7 sudo init 6
+
+8 clear
+
+9 lsblk
+
+10 df -h
+
+11 sudo blkid
+
+12 sudo lsblk -o +UUID
+
+13 cd demo-02/
+
+14 pwd
+
+15 sudo vi /etc/fstab
+
+16 sudo mount -a
+
+17 lsblk
+
+18 sudo init 6
+
+
+sudo vi /etc/fstab
+
+
+UUID=8137a753-e343-4313-980b-3d3a1f894d17 /home/ubuntu/demo-02 ext4 defaults,nofail 0 2
